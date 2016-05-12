@@ -34,4 +34,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "bootstrap-sass", "~> 3.3.6"
   spec.add_dependency "slim-rails"
   spec.add_dependency "bootswatch-rails"
+  spec.add_dependency "draper"
 end

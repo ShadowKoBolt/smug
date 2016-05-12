@@ -11,5 +11,9 @@ module  ModelInspection
     def model_name
       model.model_name
     end
+
+    def index_attrs
+      model.persistable_attribute_names - %w{ id updated_at created_at }
+    end
   end
 end

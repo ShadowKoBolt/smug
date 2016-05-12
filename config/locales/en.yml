@@ -1,0 +1,4 @@
+en:
+  smug:
+    admin:
+      new: "New %{model}"

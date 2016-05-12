@@ -6,6 +6,7 @@ require "smug/plugin"
 require "bootstrap-sass"
 require "slim-rails"
 require "bootswatch-rails"
+require "draper"
 
 module Smug
   class << self

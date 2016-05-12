@@ -4,8 +4,9 @@ module Smug
       include ModelInspection
       include RouteInspection
 
+      before_action :find_items, only: :index
+
       def index
-        render text: "index"
       end
 
       def new
@@ -21,6 +22,17 @@ module Smug
       end
 
       def destroy
+      end
+
+      protected
+
+      def find_items
+        @items = self.class.model.all
+        begin
+          @items = @items.decorate
+        rescue Draper::UninferrableDecoratorError
+          @items = IndexDecorator.decorate_collection(@items)
+        end
       end
     end
   end

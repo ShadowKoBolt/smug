@@ -1,0 +1,15 @@
+.container
+  h1 = controller.class.model_name.human(count: 2)
+
+  = link_to t("smug.admin.new", model: controller.class.model_name.human),
+            [main_app, :new, :admin, controller.class.model_name.singular_route_key]
+
+  table.table.table-striped
+    thead
+      - controller.class.index_attrs.each do |attr|
+        th = controller.class.model.human_attribute_name(attr)
+    tbody
+      - @items.each do |item|
+        tr
+          - controller.class.index_attrs.each do |attr|
+            td = item.render_attr(attr)
