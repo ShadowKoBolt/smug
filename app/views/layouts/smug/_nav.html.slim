@@ -1,0 +1,8 @@
+= navbar do
+  = vertical do
+    = link_to 'Home', admin_dashboard_path
+  = horizontal do
+    = nav class: 'navbar-right' do
+      - Smug::Plugin.all.each do |plugin|
+        = link_to plugin.model_name.human(count: 2),
+          [:admin, plugin.route_key]

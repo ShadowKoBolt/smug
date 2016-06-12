@@ -1,0 +1,10 @@
+.container
+  h1.mb-2.text-center = controller.class.model_name.human
+  .text-center.mb-2
+    = link_to :back do
+      i.glyphicon.glyphicon-arrow-left>
+      = t(".back", default: "Back")
+  dl
+    - controller.class.show_attrs.each do |attr|
+      dt = controller.class.model.human_attribute_name(attr)
+      dd = @item.render_attr(attr)

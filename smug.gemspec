@@ -26,13 +26,19 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
+  spec.test_files = Dir["spec/**/*"]
 
   spec.add_development_dependency "bundler", "~> 1.11"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rspec-rails"
+  spec.add_development_dependency "factory_girl_rails"
 
+  spec.add_dependency "rails", "~> 4.2"
   spec.add_dependency "bootstrap-sass", "~> 3.3.6"
   spec.add_dependency "slim-rails"
   spec.add_dependency "bootswatch-rails"
   spec.add_dependency "draper"
+  spec.add_dependency "bh"
+  spec.add_dependency "will_paginate"
+  spec.add_dependency "will_paginate-bootstrap"
 end

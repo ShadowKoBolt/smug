@@ -1,0 +1,4 @@
+= simple_form_for [:admin, @item.object] do |f|
+  - controller.class.edit_attrs.each do |attr|
+    = f.input attr, hint: :translate
+  = f.button :submit

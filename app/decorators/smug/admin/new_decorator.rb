@@ -1,6 +1,6 @@
 module Smug
   module Admin
-    class IndexDecorator < Decorator
+    class NewDecorator < Decorator
     end
   end
 end

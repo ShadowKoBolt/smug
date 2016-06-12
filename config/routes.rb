@@ -1,15 +1,11 @@
 Smug::Engine.routes.draw do
   scope Smug.configuration.admin_route, as: "admin", module: "admin" do
-    resource :dashboard
-  end
-end
+    root "dashboards#show"
 
-Rails.application.routes.draw do
-  Smug::Plugin.all.each do |plugin|
-    scope module: :smug do
-      scope Smug.configuration.admin_route, as: "admin", module: "admin" do
-        resources plugin.route_key, plugin.route_options
-      end
+    resource :dashboard, only: [:show]
+
+    Smug::Plugin.all.each do |plugin|
+      resources plugin.route_key, plugin.route_options
     end
   end
 end
