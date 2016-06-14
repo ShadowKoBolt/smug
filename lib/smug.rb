@@ -6,6 +6,8 @@ require "draper"
 require "bh"
 require "will_paginate"
 require "will_paginate-bootstrap"
+require "devise"
+require "devise-bootstrap-views"
 
 require "smug/version"
 require "smug/engine"
