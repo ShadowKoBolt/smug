@@ -1,4 +1,8 @@
 = simple_form_for [:admin, @item.object] do |f|
   - controller.class.edit_attrs.each do |attr|
-    = f.input attr, hint: :translate
+    - if controller.class.input_mappings.has_key? attr
+      = f.input attr, hint: :translate,
+                      as: controller.class.input_mappings[attr]
+    - else
+      = f.input attr, hint: :translate
   = f.button :submit

@@ -23,5 +23,9 @@ module  ModelInspection
     def edit_attrs
       model.persistable_attribute_names - %w{ id updated_at created_at }
     end
+
+    def input_mappings
+      { }
+    end
   end
 end

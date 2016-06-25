@@ -35,4 +35,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "will_paginate-bootstrap"
   spec.add_dependency "devise"
   spec.add_dependency "devise-bootstrap-views"
+  spec.add_dependency "bootstrap-wysihtml5-rails"
+  spec.add_dependency "simple_form"
 end

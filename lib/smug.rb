@@ -8,6 +8,8 @@ require "will_paginate"
 require "will_paginate-bootstrap"
 require "devise"
 require "devise-bootstrap-views"
+require "bootstrap-wysihtml5-rails"
+require "simple_form"
 
 require "smug/version"
 require "smug/engine"
@@ -16,15 +18,11 @@ require "smug/plugin"
 
 module Smug
   class << self
-    attr_writer :configuration
-
-    def configuration
-      @configuration || Configuration.new
-    end
+    attr_accessor :configuration
   end
 
   def self.configure
-    self.configuration
+    self.configuration ||= Configuration.new
     yield(configuration)
   end
 end
