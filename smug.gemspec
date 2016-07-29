@@ -37,4 +37,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "devise-bootstrap-views"
   spec.add_dependency "bootstrap-wysihtml5-rails"
   spec.add_dependency "simple_form"
+  spec.add_dependency "cocoon"
+  spec.add_dependency "refile"
+  spec.add_dependency "refile-mini_magick"
 end

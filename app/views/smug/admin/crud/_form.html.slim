@@ -5,4 +5,12 @@
                       as: controller.class.input_mappings[attr]
     - else
       = f.input attr, hint: :translate
+  - controller.class.nested_associations.each do |nested_association|
+    fieldset.mb-4
+      legend = nested_association.klass.model_name.human(count: 2)
+      div id=nested_association.plural_name
+        = f.simple_fields_for nested_association.name do |j|
+          = render "#{nested_association.klass.model_name.singular_route_key}_fields", f: j
+        .links
+          = link_to_add_association "Add", f, nested_association.name, class: "btn btn-default"
   = f.button :submit
