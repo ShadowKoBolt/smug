@@ -3,6 +3,7 @@ module Smug
     class CrudController < BaseController
       include ModelInspection
       include RouteInspection
+      include DashboardInspection
 
       before_action :find_items, only: :index
       before_action :find_item, only: [:show, :edit, :update, :destroy]

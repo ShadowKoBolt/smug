@@ -28,5 +28,9 @@ module Smug
     def route_options
       controller_class.route_options
     end
+
+    def display_in_nav?
+      controller_class.display_in_nav?
+    end
   end
 end
