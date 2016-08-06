@@ -12,7 +12,7 @@ require "bootstrap-wysihtml5-rails"
 require "simple_form"
 require "cocoon"
 require "refile/rails"
-require "mini_magick"
+require "refile/mini_magick"
 
 require "smug/version"
 require "smug/engine"
